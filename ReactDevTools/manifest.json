@@ -1,0 +1,12 @@
+{
+   "name": "ReactDevTools",
+   "version": "1.0.0",
+   "description": "Enables the ability to use React Dev Tools",
+   "color": "#61dafb",
+   "authors": [
+      {
+         "name": "xenos",
+         "id": "925128443090313226"
+      }
+   ]
+}
