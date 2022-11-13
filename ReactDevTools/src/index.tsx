@@ -10,7 +10,7 @@ const ReactDevTools: Plugin = {
 
 	onStart() {
 		if (get("ReactDevTools", "autoconnect")) {
-			let code = `window.__enmityConnectToDevTools({ host: "${get(
+			let code = `window.connectToDevTools({ host: "${get(
 				"ReactDevTools",
 				"host"
 			)}", port: ${get("ReactDevTools", "port")} })`;

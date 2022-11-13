@@ -66,7 +66,7 @@ export default ({ settings }: SettingsProps) => {
 					label="Connect"
 					trailing={FormRow.Arrow}
 					onPress={() => {
-						let code = `window.__enmityConnectToDevTools({ host: "${get(
+						let code = `window.connectToDevTools({ host: "${get(
 							"ReactDevTools",
 							"host"
 						)}", port: ${get("ReactDevTools", "port")} })`;
