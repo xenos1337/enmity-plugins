@@ -2,11 +2,8 @@ import {
 	FormRow,
 	FormSwitch,
 	FormInput,
-	TextInput,
 	View,
 	FormSection,
-	FormText,
-	FormLabel,
 } from "enmity/components";
 import { SettingsStore, get } from "enmity/api/settings";
 import { React, Toasts } from "enmity/metro/common";
@@ -69,7 +66,7 @@ export default ({ settings }: SettingsProps) => {
 						let code = `window.connectToDevTools({ host: "${get(
 							"ReactDevTools",
 							"host"
-						)}", port: ${get("ReactDevTools", "port")} })`;
+						)}", port: "${get("ReactDevTools", "port")}" })`;
 						Toasts.open({
 							content: `Connecting to ${get("ReactDevTools", "host")}`,
 							source: getIDByName("check"),

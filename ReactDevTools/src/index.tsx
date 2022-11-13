@@ -13,7 +13,7 @@ const ReactDevTools: Plugin = {
 			let code = `window.connectToDevTools({ host: "${get(
 				"ReactDevTools",
 				"host"
-			)}", port: ${get("ReactDevTools", "port")} })`;
+			)}", port: "${get("ReactDevTools", "port")}" })`;
 			Toasts.open({
 				content: `Connecting to ${get("ReactDevTools", "host")}`,
 				source: getIDByName("check"),
