@@ -1,12 +1,16 @@
 {
    "name": "ReactDevTools",
-   "version": "1.0.0",
-   "description": "Enables the ability to use React Dev Tools",
+   "version": "1.0.1",
+   "description": "Enables the ability to use React DevTools when using the developer build of enmity.",
    "color": "#61dafb",
    "authors": [
       {
          "name": "xenos",
          "id": "925128443090313226"
+      },
+      {
+         "name": "another",
+         "id": "943910268486950913"
       }
    ]
 }
