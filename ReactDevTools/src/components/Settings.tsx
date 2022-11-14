@@ -27,6 +27,15 @@ export default ({ settings }: SettingsProps) => {
 	// settings.set("inputHost", null)
 	// settings.set("inputPort", null)
 	// settings.set("autoConnect", null)
+
+	// Set default host and port to prevent a crash that would occur on the first run if the user tried to press connect without setting the IP AND port manually
+	if (settings.get("port") == null && settings.get("inputPort") == null) {
+		settings.set("inputPort", "8097")
+	}
+	if (settings.get("host") == null && settings.get("inputHost") == null) {
+		settings.set("inputHost", "192.168.")
+	}
+
 	return (
 		<View>
 			<FormSection title="Connection Settings">
@@ -46,7 +55,6 @@ export default ({ settings }: SettingsProps) => {
 				/>
 				<FormDivider />
 				<FormInput
-					// TODO: Test if the following sets the port as 8097 for example if its a fresh install and the user doesn't bother changing the port does it ever actually get set to anything or does it just stay null?
 					value={settings.get("port", "8097")} // Default IP is 8097 so prefill contents
 					title="Host Port"
 					placeholder="8097"
@@ -89,6 +97,11 @@ export default ({ settings }: SettingsProps) => {
 									source: getIDByName("Small"),
 								})
 							}
+						} else {
+							Toasts.open({ // Tell the user the port is invalid with a nice toast
+								content: "Invalid IP address or port",
+								source: getIDByName("Small"),
+							})
 						}
 
 						if (valid) {
