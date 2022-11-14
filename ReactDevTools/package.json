@@ -1,8 +1,9 @@
 {
    "name": "reactdevtools",
    "description": "",
-   "version": "1.0.0",
+   "version": "1.0.1",
    "scripts": {
+      "debug": "cd ../../../enmity-debug && node .",
       "build": "rollup -c --configPlugin esbuild"
    },
    "devDependencies": {
